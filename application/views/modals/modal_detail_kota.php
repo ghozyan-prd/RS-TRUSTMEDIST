@@ -18,7 +18,7 @@
               ?>
               <tr>
                 <td style="min-width:230px;"><?php echo $pegawai->pegawai; ?></td>
-                <td><?php echo $pegawai->telp; ?></td>
+                <td><?php echo $pegawai->nomor; ?></td>
                 <td><?php echo $pegawai->kelamin; ?></td>
                 <td><?php echo $pegawai->posisi; ?></td>
               </tr>

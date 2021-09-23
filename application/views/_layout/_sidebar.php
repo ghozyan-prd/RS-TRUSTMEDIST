@@ -33,6 +33,13 @@
         </a>
       </li>
 
+      <li <?php if ($page == 'pasien') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('Pasien'); ?>">
+          <i class="fa fa-user"></i>
+          <span>Data Pasien</span>
+        </a>
+      </li>
+
       <li <?php if ($page == 'posisi') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('Posisi'); ?>">
           <i class="fa fa-briefcase"></i>

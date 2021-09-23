@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pegawai extends AUTH_Controller {
+class Pasien extends AUTH_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('M_pegawai');
@@ -15,9 +15,9 @@ class Pegawai extends AUTH_Controller {
 		$data['dataPosisi'] = $this->M_posisi->select_all();
 		$data['dataKota'] = $this->M_kota->select_all();
 
-		$data['page'] = "pegawai";
-		$data['judul'] = "Data Pegawai";
-		$data['deskripsi'] = "Manage Data Pegawai";
+		$data['page'] = "pasien";
+		$data['judul'] = "Data Pasien";
+		$data['deskripsi'] = "Manage Data Pasien";
 
 		$data['modal_tambah_pegawai'] = show_my_modal('modals/modal_tambah_pegawai', 'tambah-pegawai', $data);
 
@@ -30,10 +30,10 @@ class Pegawai extends AUTH_Controller {
 	}
 
 	public function prosesTambah() {
-		$this->form_validation->set_rules('pegawai_nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('pegawai_nomor', 'Kota', 'trim|required');
-		$this->form_validation->set_rules('pegawai_sip', 'Jenis Kelamin', 'trim|required');
-		$this->form_validation->set_rules('pegawai_jenis_kelamin', 'Posisi', 'trim|required');
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+		$this->form_validation->set_rules('kota', 'Kota', 'trim|required');
+		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'trim|required');
+		$this->form_validation->set_rules('posisi', 'Posisi', 'trim|required');
 
 		$data = $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
@@ -66,10 +66,10 @@ class Pegawai extends AUTH_Controller {
 	}
 
 	public function prosesUpdate() {
-		$this->form_validation->set_rules('pegawai_nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('pegawai_nomor', 'Nomor Pegawai', 'trim|required');
-		$this->form_validation->set_rules('pegawai_jenis_kelamin', 'Jenis Kelamin', 'trim|required');
-		$this->form_validation->set_rules('pegawai_sip', 'SIP Pegawai', 'trim|required');
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+		$this->form_validation->set_rules('kota', 'Kota', 'trim|required');
+		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'trim|required');
+		$this->form_validation->set_rules('posisi', 'Posisi', 'trim|required');
 
 		$data = $this->input->post();
 		if ($this->form_validation->run() == TRUE) {

@@ -71,5 +71,3 @@ class M_kota extends CI_Model {
 	}
 }
 
-/* End of file M_kota.php */
-/* Location: ./application/models/M_kota.php */

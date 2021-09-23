@@ -4,7 +4,7 @@
       <div class="inner">
         <h3><?php echo $jml_pegawai; ?></h3>
 
-        <p>Jumlah Pegawai</p>
+        <p>Jumlah Pegawai (Dokter)</p>
       </div>
       <div class="icon">
         <i class="ion ion-ios-contact"></i>
@@ -15,9 +15,9 @@
   <div class="col-lg-4 col-xs-6">
     <div class="small-box bg-green">
       <div class="inner">
-        <h3><?php echo $jml_posisi; ?></h3>
+        <h3><?php echo $jml_unit; ?></h3>
 
-        <p>Jumlah Posisi</p>
+        <p>Jumlah Unit</p>
       </div>
       <div class="icon">
         <i class="ion ion-ios-briefcase-outline"></i>
@@ -28,9 +28,9 @@
   <div class="col-lg-4 col-xs-6">
     <div class="small-box bg-yellow">
       <div class="inner">
-        <h3><?php echo $jml_kota; ?></h3>
+        <h3><?php echo $jml_pasien; ?></h3>
 
-        <p>Jumlah Kota</p>
+        <p>Jumlah Pasien Terdaftar</p>
       </div>
       <div class="icon">
         <i class="ion ion-location"></i>

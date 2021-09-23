@@ -20,10 +20,9 @@
       <thead>
         <tr>
           <th>Nama</th>
-          <th>No Telp</th>
-          <th>Asal kota</th>
+          <th>Nomor Pegawai</th>
+          <th>SIP Pegawai</th>
           <th>Jenis Kelamin</th>
-          <th>Posisi</th>
           <th style="text-align: center;">Aksi</th>
         </tr>
       </thead>
