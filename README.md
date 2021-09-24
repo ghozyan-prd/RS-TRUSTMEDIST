@@ -1,12 +1,12 @@
-# AdminLTE-CRUD-With-Codeigniter
-CRUD dengan Template Admin LTE menggunakan Codeigniter
+# Aplikasi Test Full Stack Developer Trustmedis By Ghozyan Hilman Pradana
+RS Trustmedis
 
 Fitur : 
-  1. CRUD with Ajax
-  2. Datatable
-  3. Export dan Import ke Excel
-  4. Chart
+  1. Master Data Dokter
+  2. Master Data Pasien
+  3. Master Data History Diagnosa
+  4. Jadwal Praktik Dokter
+  5. Filter data
   
 Akun Login :
-  1. username : auwfar / password : auwfar
-  2. username : ozil / password : ozil
+  username : ozy / password : ozy
