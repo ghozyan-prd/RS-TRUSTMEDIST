@@ -43,7 +43,7 @@ class M_pegawai extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE master_dokter SET pegawai_nama='" .$data['pegawai_nama'] ."', pegawai_nomor='" .$data['pegawai_nomor'] ."', pegawai_sip=" .$data['pegawai_sip'] .", pegawai_jenis_kelamin='" .$data['pegawai_jenis_kelamin'] ."'  WHERE pegawai_id='" .$data['id'] ."'";
+		$sql = "UPDATE master_dokter SET pegawai_nama='" .$data['pegawai_nama'] ."', pegawai_nomor='" .$data['pegawai_nomor'] ."', pegawai_sip='" .$data['pegawai_sip'] ."', pegawai_jenis_kelamin='" .$data['pegawai_jenis_kelamin'] ."'  WHERE pegawai_id='" .$data['id'] ."'";
 
 		$this->db->query($sql);
 
@@ -51,7 +51,7 @@ class M_pegawai extends CI_Model {
 	}
 
 	public function delete($id) {
-		$sql = "DELETE FROM pegawai WHERE id='" .$id ."'";
+		$sql = "DELETE FROM master_dokter WHERE pegawai_id='" .$id ."'";
 
 		$this->db->query($sql);
 
@@ -59,8 +59,8 @@ class M_pegawai extends CI_Model {
 	}
 
 	public function insert($data) {
-		$id = md5(DATE('ymdhms').rand());
-		$sql = "INSERT INTO master_dokter VALUES('{$id}','" .$data['pegawai_nama'] ."','" .$data['pegawai_nomor'] ."','" .$data['pegawai_sip'] ."','" .$data['pegawai_jenis_kelamin']."')";
+		
+		$sql = "INSERT INTO master_dokter VALUES('','" .$data['pegawai_nomor'] ."','" .$data['pegawai_nama'] ."','" .$data['pegawai_jenis_kelamin'] ."','" .$data['pegawai_sip']."')";
 
 		$this->db->query($sql);
 
