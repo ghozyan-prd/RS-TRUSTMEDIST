@@ -9,7 +9,7 @@ class M_pasien extends CI_Model {
 	}
 
 	public function select_by_id($id) {
-		$sql = "SELECT * FROM master_pasien WHERE unit_id = '{$id}'";
+		$sql = "SELECT * FROM master_pasien WHERE pasien_id = '{$id}'";
 
 		$data = $this->db->query($sql);
 
@@ -25,7 +25,7 @@ class M_pasien extends CI_Model {
 	}
 
 	public function insert($data) {
-		$sql = "INSERT INTO master_pasien VALUES('','" .$data['posisi'] ."')";
+		$sql = "INSERT INTO master_pasien VALUES('','" .$data['pasien_norm'] ."','" .$data['pasien_nik'] ."','" .$data['pasien_nama'] ."','" .$data['pasien_kelamin']."','" .$data['pasien_alamat']."','" .$data['pasien_kota']."')";
 
 		$this->db->query($sql);
 
@@ -39,7 +39,7 @@ class M_pasien extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE master_pasien SET nama='" .$data['posisi'] ."' WHERE id='" .$data['id'] ."'";
+		$sql = "UPDATE master_pasien SET pasien_norm='" .$data['pasien_norm'] ."', pasien_nik='" .$data['pasien_nik'] ."', pasien_nama='" .$data['pasien_nama'] ."', pasien_kelamin='" .$data['pasien_alamat'] ."', pasien_alamat='" .$data['pasien_kelamin'] ."', pasien_kota='" .$data['pasien_kota'] ."'  WHERE pasien_id='" .$data['id'] ."'";
 
 		$this->db->query($sql);
 
