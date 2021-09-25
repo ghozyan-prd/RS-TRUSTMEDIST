@@ -3,7 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_pasien extends CI_Model {
 	public function select_all() {
-		$data = $this->db->get('master_pasien');
+		$sql = " SELECT master_pasien.pasien_id, master_pasien.pasien_norm, master_pasien.pasien_nik, master_pasien.pasien_nama, master_pasien.pasien_kelamin, master_pasien.pasien_alamat, kelamin.nama as JK, kota.nama as nama_kota FROM master_pasien JOIN kelamin ON master_pasien.pasien_kelamin = kelamin.kode JOIN kota ON master_pasien.pasien_kota = kota.id ";
+
+		$data = $this->db->query($sql);
 
 		return $data->result();
 	}

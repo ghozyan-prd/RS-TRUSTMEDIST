@@ -40,6 +40,13 @@
         </a>
       </li>
 
+      <li <?php if ($page == 'unit') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('Unit'); ?>">
+          <i class="fa fa-user"></i>
+          <span>Data Unit</span>
+        </a>
+      </li>
+
       <li <?php if ($page == 'posisi') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('Posisi'); ?>">
           <i class="fa fa-briefcase"></i>

@@ -13,6 +13,7 @@
 		tampilPasien();
 		tampilPosisi();
 		tampilKota();
+		tampilUnit();
 		<?php
 			if ($this->session->flashdata('msg') != '') {
 				echo "effect_msg();";
@@ -136,6 +137,110 @@
 	})
 
 	$('#update-pegawai').on('hidden.bs.modal', function () {
+	  $('.form-msg').html('');
+	})
+
+	// Unit
+	function tampilUnit() {
+		$.get('<?php echo base_url('Unit/tampil'); ?>', function(data) {
+			MyTable.fnDestroy();
+			$('#data-unit').html(data);
+			refresh();
+		});
+	}
+
+
+	var id_unit;
+	$(document).on("click", ".konfirmasiHapus-unit", function() {
+		id_unit = $(this).attr("data-id");
+	})
+	$(document).on("click", ".hapus-dataUnit", function() {
+		var id = id_unit;
+		
+		$.ajax({
+			method: "POST",
+			url: "<?php echo base_url('Unit/delete'); ?>",
+			data: "id=" +id
+		})
+		.done(function(data) {
+			$('#konfirmasiHapus').modal('hide');
+			tampilUnit();
+			$('.msg').html(data);
+			effect_msg();
+		})
+	})
+
+	$(document).on("click", ".update-dataUnit", function() {
+		var id = $(this).attr("data-id");
+		
+		$.ajax({
+			method: "POST",
+			url: "<?php echo base_url('Unit/update'); ?>",
+			data: "id=" +id
+		})
+		.done(function(data) {
+			$('#tempat-modal').html(data);
+			$('#update-unit').modal('show');
+		})
+	})
+
+	$('#form-tambah-unit').submit(function(e) {
+		var data = $(this).serialize();
+
+		$.ajax({
+			method: 'POST',
+			url: '<?php echo base_url('Unit/prosesTambah'); ?>',
+			data: data
+		})
+		.done(function(data) {
+			var out = jQuery.parseJSON(data);
+
+			tampilUnit();
+			if (out.status == 'form') {
+				$('.form-msg').html(out.msg);
+				effect_msg_form();
+			} else {
+				document.getElementById("form-tambah-unit").reset();
+				$('#tambah-unit').modal('hide');
+				$('.msg').html(out.msg);
+				effect_msg();
+			}
+		})
+		
+		e.preventDefault();
+	});
+
+	$(document).on('submit', '#form-update-unit', function(e){
+		var data = $(this).serialize();
+
+		$.ajax({
+			method: 'POST',
+			url: '<?php echo base_url('Unit/prosesUpdate'); ?>',
+			data: data
+		})
+		.done(function(data) {
+			var out = jQuery.parseJSON(data);
+
+			tampilUnit();
+			if (out.status == 'form') {
+				$('.form-msg').html(out.msg);
+				effect_msg_form();
+			} else {
+				document.getElementById("form-update-unit").reset();
+				$('#update-unit').modal('hide');
+				$('.msg').html(out.msg);
+				effect_msg();
+			}
+		})
+		
+		e.preventDefault();
+	});
+
+	$('#tambah-unit').on('hidden.bs.modal', function () {
+	  $('.form-msg').html('');
+	})
+
+	$('#update-unit').on('hidden.bs.modal', function () {
 	  $('.form-msg').html('');
 	})
 

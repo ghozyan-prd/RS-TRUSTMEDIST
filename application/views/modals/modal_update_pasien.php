@@ -47,9 +47,17 @@
 
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-phone-alt"></i>
+            <i class="glyphicon glyphicon-home"></i>
           </span>
-          <input type="text" class="form-control" placeholder="Kota" name="pasien_kota" aria-describedby="sizing-addon2" value="<?php echo $dataPasien->pasien_kota; ?>">
+          <select name="pasien_kota" class="form-control"  aria-describedby="sizing-addon2">
+            <?php
+            foreach ($dataKota as $kota) {
+              ?>
+              <option value="<?php echo $kota->id; ?>" <?php if($kota->id == $dataPasien->pasien_kota){echo "selected='selected'";} ?>><?php echo $kota->nama; ?></option>
+              <?php
+            }
+            ?>
+          </select>
         </div>
 
         <div class="form-group">

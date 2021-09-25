@@ -25,7 +25,7 @@ class M_unit extends CI_Model {
 	}
 
 	public function insert($data) {
-		$sql = "INSERT INTO master_unit VALUES('','" .$data['posisi'] ."')";
+		$sql = "INSERT INTO master_unit VALUES('','" .$data['unit_kode'] ."','" .$data['unit_nama'] ."')";
 
 		$this->db->query($sql);
 
@@ -39,7 +39,7 @@ class M_unit extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE master_unit SET nama='" .$data['posisi'] ."' WHERE id='" .$data['id'] ."'";
+		$sql = "UPDATE master_unit SET unit_kode='" .$data['unit_kode'] ."', unit_nama='" .$data['unit_nama'] ."'  WHERE unit_id='" .$data['id'] ."'";
 
 		$this->db->query($sql);
 
