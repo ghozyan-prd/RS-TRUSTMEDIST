@@ -47,6 +47,13 @@
         </a>
       </li>
 
+      <li <?php if ($page == 'jadwal') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('Jadwal'); ?>">
+          <i class="fa fa-user"></i>
+          <span>Data Jadwal</span>
+        </a>
+      </li>
+
       <li <?php if ($page == 'posisi') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('Posisi'); ?>">
           <i class="fa fa-briefcase"></i>

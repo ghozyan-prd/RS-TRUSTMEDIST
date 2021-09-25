@@ -14,6 +14,7 @@
 		tampilPosisi();
 		tampilKota();
 		tampilUnit();
+		tampilJadwal();
 		<?php
 			if ($this->session->flashdata('msg') != '') {
 				echo "effect_msg();";
@@ -255,10 +256,10 @@
 
 	var id_pasien;
 	$(document).on("click", ".konfirmasiHapus-pasien", function() {
-		id_pegawai = $(this).attr("data-id");
+		id_pasien = $(this).attr("data-id");
 	})
 	$(document).on("click", ".hapus-dataPasien", function() {
-		var id = id_pegawai;
+		var id = id_pasien;
 		
 		$.ajax({
 			method: "POST",
@@ -344,6 +345,109 @@
 	})
 
 	$('#update-pasien').on('hidden.bs.modal', function () {
+	  $('.form-msg').html('');
+	})
+
+	//Jadwal
+	function tampilJadwal() {
+		$.get('<?php echo base_url('Jadwal/tampil'); ?>', function(data) {
+			MyTable.fnDestroy();
+			$('#data-jadwal').html(data);
+			refresh();
+		});
+	}
+
+	var id_jadwal;
+	$(document).on("click", ".konfirmasiHapus-jadwal", function() {
+		id_jadwal = $(this).attr("data-id");
+	})
+	$(document).on("click", ".hapus-dataJadwal", function() {
+		var id = id_jadwal;
+		
+		$.ajax({
+			method: "POST",
+			url: "<?php echo base_url('Jadwal/delete'); ?>",
+			data: "id=" +id
+		})
+		.done(function(data) {
+			$('#konfirmasiHapus').modal('hide');
+			tampilJadwal();
+			$('.msg').html(data);
+			effect_msg();
+		})
+	})
+
+	$(document).on("click", ".update-dataJadwal", function() {
+		var id = $(this).attr("data-id");
+		
+		$.ajax({
+			method: "POST",
+			url: "<?php echo base_url('Jadwal/update'); ?>",
+			data: "id=" +id
+		})
+		.done(function(data) {
+			$('#tempat-modal').html(data);
+			$('#update-jadwal').modal('show');
+		})
+	})
+
+	$('#form-tambah-jadwal').submit(function(e) {
+		var data = $(this).serialize();
+
+		$.ajax({
+			method: 'POST',
+			url: '<?php echo base_url('Jadwal/prosesTambah'); ?>',
+			data: data
+		})
+		.done(function(data) {
+			var out = jQuery.parseJSON(data);
+
+			tampilJadwal();
+			if (out.status == 'form') {
+				$('.form-msg').html(out.msg);
+				effect_msg_form();
+			} else {
+				document.getElementById("form-tambah-jadwal").reset();
+				$('#tambah-jadwal').modal('hide');
+				$('.msg').html(out.msg);
+				effect_msg();
+			}
+		})
+		
+		e.preventDefault();
+	});
+
+	$(document).on('submit', '#form-update-jadwal', function(e){
+		var data = $(this).serialize();
+
+		$.ajax({
+			method: 'POST',
+			url: '<?php echo base_url('Jadwal/prosesUpdate'); ?>',
+			data: data
+		})
+		.done(function(data) {
+			var out = jQuery.parseJSON(data);
+
+			tampilPasien();
+			if (out.status == 'form') {
+				$('.form-msg').html(out.msg);
+				effect_msg_form();
+			} else {
+				document.getElementById("form-update-jadwal").reset();
+				$('#update-jadwal').modal('hide');
+				$('.msg').html(out.msg);
+				effect_msg();
+			}
+		})
+		
+		e.preventDefault();
+	});
+
+	$('#tambah-jadwal').on('hidden.bs.modal', function () {
+	  $('.form-msg').html('');
+	})
+
+	$('#update-jadwal').on('hidden.bs.modal', function () {
 	  $('.form-msg').html('');
 	})
 
