@@ -53,13 +53,6 @@
           <span>Data Jadwal</span>
         </a>
       </li>
-
-      <li <?php if ($page == 'posisi') {echo 'class="active"';} ?>>
-        <a href="<?php echo base_url('Posisi'); ?>">
-          <i class="fa fa-briefcase"></i>
-          <span>Data Posisi</span>
-        </a>
-      </li>
       
       <li <?php if ($page == 'kota') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('Kota'); ?>">

@@ -86,4 +86,12 @@ class M_jadwal extends CI_Model {
 
 		return $data->result();
 	}
+
+	public function select_all_jam() {
+		$sql = "SELECT * FROM jam";
+
+		$data = $this->db->query($sql);
+
+		return $data->result();
+	}
 }

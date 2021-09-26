@@ -6,7 +6,7 @@
         <input type="hidden" name="id" value="<?php echo $dataJadwal->jadwal_id; ?>">
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-home"></i>
+            <i class="glyphicon glyphicon-user"></i>
           </span>
           <select name="pegawai_id" class="form-control" aria-describedby="sizing-addon2">
             <?php
@@ -23,7 +23,7 @@
         
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-home"></i>
+            <i class="glyphicon glyphicon-cog"></i>
           </span>
           <select name="unit_id" class="form-control" aria-describedby="sizing-addon2">
             <?php
@@ -39,7 +39,7 @@
 
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-home"></i>
+            <i class="glyphicon glyphicon-book"></i>
           </span>
           <select name="hari_id" class="form-control" aria-describedby="sizing-addon2">
             <?php
@@ -56,16 +56,34 @@
 
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-phone-alt"></i>
+            <i class="glyphicon glyphicon-new-window"></i>
           </span>
-          <input type="text" class="form-control" placeholder="Jam Mulai" name="jam_mulai" aria-describedby="sizing-addon2" value="<?php echo $dataJadwal->jam_mulai; ?>">
+          <select name="jam_mulai" class="form-control" aria-describedby="sizing-addon2">
+            <?php
+            foreach ($DataJam as $jam) {
+              ?>
+              <option value="<?php echo $jam->jam; ?>" <?php if($jam->jam == $dataJadwal->jam_mulai){echo "selected='selected'";} ?>><?php echo $jam->jam; ?>
+              </option>
+              <?php
+            }
+            ?>
+          </select>
         </div>
 
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-phone-alt"></i>
+            <i class="glyphicon glyphicon-log-out"></i>
           </span>
-          <input type="text" class="form-control" placeholder="Jam Selesai" name="jam_selesai" aria-describedby="sizing-addon2" value="<?php echo $dataJadwal->jam_selesai; ?>">
+          <select name="jam_selesai" class="form-control" aria-describedby="sizing-addon2">
+            <?php
+            foreach ($DataJam as $jam) {
+              ?>
+              <option value="<?php echo $jam->jam; ?>" <?php if($jam->jam == $dataJadwal->jam_selesai){echo "selected='selected'";} ?>><?php echo $jam->jam; ?>
+              </option>
+              <?php
+            }
+            ?>
+          </select>
         </div>
 
 

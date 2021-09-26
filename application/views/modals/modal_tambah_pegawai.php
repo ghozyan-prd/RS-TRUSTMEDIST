@@ -19,7 +19,7 @@
 
     <div class="input-group form-group">
       <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-phone-alt"></i>
+        <i class="glyphicon glyphicon-briefcase"></i>
       </span>
       <input type="text" class="form-control" placeholder="Pegawai SIP" name="pegawai_sip" aria-describedby="sizing-addon2">
     </div>

@@ -22,7 +22,7 @@
 
             <p>
               <?php echo $userdata->nama; ?> - Web Developer
-              <small>Member since Sep. 2016</small>
+              <small>Member since Sep. 2021</small>
             </p>
           </li>
           <!-- Menu Footer-->

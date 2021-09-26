@@ -9,12 +9,13 @@
 		});
 
 	window.onload = function() {
+		tampilJadwal();
 		tampilPegawai();
 		tampilPasien();
 		tampilPosisi();
 		tampilKota();
 		tampilUnit();
-		tampilJadwal();
+		
 		<?php
 			if ($this->session->flashdata('msg') != '') {
 				echo "effect_msg();";

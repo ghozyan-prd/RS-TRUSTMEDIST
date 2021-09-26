@@ -6,20 +6,20 @@
   <form id="form-tambah-pasien" method="POST">
     <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-user"></i>
+            <i class="glyphicon glyphicon-bullhorn"></i>
           </span>
           <input type="text" class="form-control" placeholder="Nomor Pasien" name="pasien_norm" aria-describedby="sizing-addon2">
         </div>
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-phone-alt"></i>
+            <i class="glyphicon glyphicon-exclamation-sign"></i>
           </span>
           <input type="text" class="form-control" placeholder="NIK Pasien" name="pasien_nik" aria-describedby="sizing-addon2">
         </div>
 
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-phone-alt"></i>
+            <i class="glyphicon glyphicon-user"></i>
           </span>
           <input type="text" class="form-control" placeholder="Pasien Nama" name="pasien_nama" aria-describedby="sizing-addon2">
         </div>
@@ -40,7 +40,7 @@
 
         <div class="input-group form-group">
           <span class="input-group-addon" id="sizing-addon2">
-            <i class="glyphicon glyphicon-phone-alt"></i>
+            <i class="glyphicon glyphicon-pushpin"></i>
           </span>
           <input type="text" class="form-control" placeholder="Alamat Pasien" name="pasien_alamat" aria-describedby="sizing-addon2">
         </div>

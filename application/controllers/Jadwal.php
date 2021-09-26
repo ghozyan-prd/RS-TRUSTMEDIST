@@ -19,6 +19,7 @@ class Jadwal extends AUTH_Controller {
 		$data['dataPegawai'] = $this->M_pegawai->select_all_pegawai();
 		$data['dataUnit'] = $this->M_unit->select_all();
 		$data['DataHari'] = $this->M_jadwal->select_all_hari();
+		$data['DataJam'] = $this->M_jadwal->select_all_jam();
  
 		$data['page'] = "jadwal";
 		$data['judul'] = "Data Jadwal";
@@ -41,17 +42,27 @@ class Jadwal extends AUTH_Controller {
 		$this->form_validation->set_rules('jam_mulai', 'Jam Mulai', 'trim|required');
 		$this->form_validation->set_rules('jam_selesai', 'Jam Selesai', 'trim|required');
 
-		$data = $this->input->post();
+		$data = $this->input->post(); 
 		if ($this->form_validation->run() == TRUE) {
-			$result = $this->M_jadwal->insert($data);
 
-			if ($result > 0) {
+			if ($data['jam_mulai'] >= $data['jam_selesai'] OR $data['jam_mulai'] == $data['jam_selesai']) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Jadwal Berhasil ditambahkan', '20px');
-			} else {
-				$out['status'] = '';
-				$out['msg'] = show_err_msg('Data Jadwal Gagal ditambahkan', '20px');
+				$out['msg'] = show_err_msg('Jam Mulai Harus Lebih Kecil Dari Jam Selesai !', '20px');
+
+			} else{
+
+				$result = $this->M_jadwal->insert($data);
+
+				if ($result > 0) {
+					$out['status'] = '';
+					$out['msg'] = show_succ_msg('Data Jadwal Berhasil ditambahkan', '20px');
+				} else {
+					$out['status'] = '';
+					$out['msg'] = show_err_msg('Data Jadwal Gagal ditambahkan', '20px');
+				}
+
 			}
+			
 		} else {
 			$out['status'] = 'form';
 			$out['msg'] = show_err_msg(validation_errors());
@@ -67,6 +78,7 @@ class Jadwal extends AUTH_Controller {
 		$data['dataPegawai'] = $this->M_pegawai->select_all_pegawai();
 		$data['dataUnit'] = $this->M_unit->select_all();
 		$data['DataHari'] = $this->M_jadwal->select_all_hari();
+		$data['DataJam'] = $this->M_jadwal->select_all_jam();
 		$data['userdata'] = $this->userdata;
 
 		echo show_my_modal('modals/modal_update_jadwal', 'update-jadwal', $data);

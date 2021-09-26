@@ -6,13 +6,13 @@
   <form id="form-tambah-unit" method="POST">
     <div class="input-group form-group">
       <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-user"></i>
+        <i class="glyphicon glyphicon-pushpin"></i>
       </span>
       <input type="text" class="form-control" placeholder="Kode Unit" name="unit_kode" aria-describedby="sizing-addon2">
     </div>
     <div class="input-group form-group">
       <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-phone-alt"></i>
+        <i class="glyphicon glyphicon-saved"></i>
       </span>
       <input type="text" class="form-control" placeholder="Nama Unit" name="unit_nama" aria-describedby="sizing-addon2">
     </div>

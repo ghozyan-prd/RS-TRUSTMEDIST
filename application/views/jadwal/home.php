@@ -8,10 +8,10 @@
         <button class="form-control btn btn-primary" data-toggle="modal" data-target="#tambah-jadwal"><i class="glyphicon glyphicon-plus-sign"></i> Tambah Jadwal</button>
     </div>
     <div class="col-md-3">
-        <a href="<?php echo base_url('Pegawai/export'); ?>" class="form-control btn btn-default"><i class="glyphicon glyphicon glyphicon-floppy-save"></i> Export Data Excel</a>
+        <a href="#" class="form-control btn btn-default"><i class="glyphicon glyphicon glyphicon-floppy-save"></i> Export Data Excel</a>
     </div>
     <div class="col-md-3">
-        <button class="form-control btn btn-default" data-toggle="modal" data-target="#import-pegawai"><i class="glyphicon glyphicon glyphicon-floppy-open"></i> Import Data Excel</button>
+        <button class="form-control btn btn-default" data-toggle="modal" data-target="#"><i class="glyphicon glyphicon glyphicon-floppy-open"></i> Import Data Excel</button>
     </div>
   </div>
   <!-- /.box-header -->
@@ -39,8 +39,3 @@
 <div id="tempat-modal"></div>
 
 <?php show_my_confirm('konfirmasiHapus', 'hapus-dataJadwal', 'Hapus Data Ini?', 'Ya, Hapus Data Ini'); ?>
-<?php
-  $data['judul'] = 'Pegawai';
-  $data['url'] = 'Pegawai/import';
-  echo show_my_modal('modals/modal_import', 'import-pegawai', $data);
-?>

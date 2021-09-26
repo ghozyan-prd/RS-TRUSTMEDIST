@@ -68,3 +68,5 @@ class M_posisi extends CI_Model {
 	}
 }
 
+/* End of file M_posisi.php */
+/* Location: ./application/models/M_posisi.php */

@@ -7,7 +7,7 @@
     <input type="hidden" name="id" value="<?php echo $dataKota->id; ?>">
     <div class="input-group form-group">
       <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-user"></i>
+        <i class="glyphicon glyphicon-pawn"></i>
       </span>
       <input type="text" class="form-control" placeholder="Nama Kota" name="kota" aria-describedby="sizing-addon2" value="<?php echo $dataKota->nama; ?>">
     </div>
