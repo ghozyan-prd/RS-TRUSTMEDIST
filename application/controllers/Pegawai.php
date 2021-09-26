@@ -30,10 +30,10 @@ class Pegawai extends AUTH_Controller {
 	}
 
 	public function prosesTambah() {
-		$this->form_validation->set_rules('pegawai_nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('pegawai_nomor', 'Kota', 'trim|required');
-		$this->form_validation->set_rules('pegawai_sip', 'Jenis Kelamin', 'trim|required');
-		$this->form_validation->set_rules('pegawai_jenis_kelamin', 'Posisi', 'trim|required');
+		$this->form_validation->set_rules('pegawai_nama', 'Nama Pegawai', 'trim|required');
+		$this->form_validation->set_rules('pegawai_nomor', 'Nomor Pegawai', 'trim|required');
+		$this->form_validation->set_rules('pegawai_sip', 'SIP Pegawai', 'trim|required');
+		$this->form_validation->set_rules('pegawai_jenis_kelamin', 'Jenis Kelamin', 'trim|required');
 
 		$data = $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
