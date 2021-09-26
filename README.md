@@ -9,4 +9,4 @@ Fitur :
   5. Filter data
   
 Akun Login :
-  username : ozy / password : ozy
+  username : ghozyan / password : ghozyan
