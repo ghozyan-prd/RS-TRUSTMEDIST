@@ -1,4 +1,17 @@
 <?php
+	//print date
+
+if (!function_exists('formatted_date')) {
+
+    function formatted_date($timestamp, $format = "d/m/Y - H:i")
+
+    {
+
+        return date($format, strtotime($timestamp));
+
+    }
+
+}
 	// MSG
 	function show_msg($content='', $type='success', $icon='fa-info-circle', $size='14px') {
 		if ($content != '') {

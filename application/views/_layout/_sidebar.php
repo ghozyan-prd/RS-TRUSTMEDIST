@@ -67,6 +67,28 @@
           <span>Data Kota</span>
         </a>
       </li>
+
+      <li <?php if ($page == 'demograsi/kota') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('Demograsi/kota'); ?>">
+          <i class="fa fa-location-arrow"></i>
+          <span>Data Demograsi Kota</span>
+        </a>
+      </li>
+
+      <li <?php if ($page == 'demograsi/poli') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('Demograsi/poli'); ?>">
+          <i class="fa fa-location-arrow"></i>
+          <span>Data Demograsi Unit</span>
+        </a>
+      </li>
+
+      <li <?php if ($page == 'laporan-pendaftaran') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('Laporan'); ?>">
+          <i class="fa fa-location-arrow"></i>
+          <span>Data Laporan Pendaftaran</span>
+        </a>
+      </li>
+
     </ul>
     <!-- /.sidebar-menu -->
   </section>

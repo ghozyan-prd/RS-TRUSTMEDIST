@@ -36,14 +36,15 @@ class Home extends AUTH_Controller {
 			$index++;
 		}
 
-		$kota 				= $this->M_kota->select_all();
+		$kota 				= $this->M_kota->select_all(); //print_r($kota); die();
 		$index = 0;
 		foreach ($kota as $value) {
 		    $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)];
 
 			$pegawai_by_kota = $this->M_pegawai->select_by_kota($value->id);
-
-			$data_kota[$index]['value'] = $pegawai_by_kota->jml;
+			$diagnosa_by_kota = $this->M_pasien->select_by_kota($value->id);
+//print_r($diagnosa_by_kota); die();
+			$data_kota[$index]['value'] = $diagnosa_by_kota->jml;
 			$data_kota[$index]['color'] = $color;
 			$data_kota[$index]['highlight'] = $color;
 			$data_kota[$index]['label'] = $value->nama;
@@ -53,7 +54,7 @@ class Home extends AUTH_Controller {
 
 		$data['data_posisi'] = json_encode($data_posisi);
 		$data['data_kota'] = json_encode($data_kota);
-
+//print_r($data['data_kota']); die();
 		$data['page'] 			= "home";
 		$data['judul'] 			= "Beranda";
 		$data['deskripsi'] 		= "Manage Data CRUD";

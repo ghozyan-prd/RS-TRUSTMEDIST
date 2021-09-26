@@ -26,6 +26,15 @@ class M_pasien extends CI_Model {
 		return $data->result();
 	}
 
+	public function select_by_kota($id) {
+		$sql = "SELECT COUNT(master_diagnosa.diagnosa_id) as jml FROM diagnosa_pasien JOIN master_diagnosa ON master_diagnosa.diagnosa_id = diagnosa_pasien.m_diagnosa_id JOIN kunjungan_pasien ON kunjungan_pasien.pendaftaran_id = diagnosa_pasien.kunjungan_id JOIN master_pasien ON master_pasien.pasien_id = kunjungan_pasien.m_pasien_id JOIN kota ON kota.id = master_pasien.pasien_kota WHERE master_pasien.pasien_kota = '{$id}'";
+
+		$data = $this->db->query($sql);
+
+		return $data->row();
+	}
+
+
 	public function insert($data) {
 		$sql = "INSERT INTO master_pasien VALUES('','" .$data['pasien_norm'] ."','" .$data['pasien_nik'] ."','" .$data['pasien_nama'] ."','" .$data['pasien_kelamin']."','" .$data['pasien_alamat']."','" .$data['pasien_kota']."')";
 
